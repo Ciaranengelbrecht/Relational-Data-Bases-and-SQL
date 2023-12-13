@@ -1,0 +1,10 @@
+CREATE TABLE loan (
+clientId INTEGER,
+ISBN TEXT,
+copyNumber INTEGER,
+dateOut TEXT,
+dateBack TEXT,
+FOREIGN KEY (ISBN, copyNumber) REFERENCES BookCopy,
+FOREIGN KEY (clientId) REFERENCES Client
+ON DELETE SET NULL ON UPDATE CASCADE
+);
